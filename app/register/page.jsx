@@ -34,8 +34,8 @@ const Register = () => {
     );
 
     if (userExists) {
-      alert('Usuário ou e-mail já cadastrados. Por favor, escolha informações únicas.');
-      return;
+      return toast.error('Usuário ou e-mail ja existem. Por favor, escolha informações únicas.');
+
     }
 
     // Adiciona o novo registro ao array existente
@@ -93,19 +93,19 @@ const Register = () => {
       '>
         <label htmlFor="username">
           Nome:
-          <input required type="text" id="username"  onChange={handleInputChange} value={form.username}  className="input input-md input-bordered w-full max-w-xs"  />
+          <input required type="text" id="username" onChange={handleInputChange} value={form.username} className="input input-md input-bordered w-full max-w-xs" />
         </label>
         <label htmlFor="email">
           Email:
-          <input required type="email" id="email" onChange={handleInputChange} value={form.email} className="input input-md input-bordered w-full max-w-xs"/>
+          <input required type="email" id="email" onChange={handleInputChange} value={form.email} className="input input-md input-bordered w-full max-w-xs" />
         </label>
         <label htmlFor="password">
           Senha:
-          <input required type="password" id="password"  onChange={handleInputChange} value={form.password} className="input input-md input-bordered w-full max-w-xs" />
+          <input required type="password" id="password" onChange={handleInputChange} value={form.password} className="input input-md input-bordered w-full max-w-xs" />
         </label>
         <label htmlFor="phone">
           Telefone:
-          <input required type="tel" id="phone"onChange={handleInputChange} value={form.phone} className="input input-md input-bordered w-full max-w-xs"/>
+          <input required type="tel" id="phone" onChange={handleInputChange} value={form.phone} className="input input-md input-bordered w-full max-w-xs" />
         </label>
         <button type="submit" className='btn btn-wide btn-outline btn-black'>Criar conta</button>
       </form>
@@ -116,9 +116,9 @@ const Register = () => {
        max-md:flex-col
       '>
         <label htmlFor="accountName">Email:</label>
-        <input required type="text" id="email" onChange={handleInputLoginChange} value={loginData.email}  className="input input-bordered input-sm w-full max-w-xs" />
+        <input required type="text" id="email" onChange={handleInputLoginChange} value={loginData.email} className="input input-bordered input-sm w-full max-w-xs" />
         <label htmlFor="accountPassword">Senha:</label>
-        <input required type="password" id="password" onChange={handleInputLoginChange} value={loginData.password}  className="input input-bordered input-sm w-full max-w-xs" />
+        <input required type="password" id="password" onChange={handleInputLoginChange} value={loginData.password} className="input input-bordered input-sm w-full max-w-xs" />
         <button type='submit' className=' btn btn-ghost font-bold hover:text-lg transition-all duration-200
          max-md:bg-slate-600  max-md:text-white  max-md:mt-4
         '>Login <IoRocketOutline /></button>
